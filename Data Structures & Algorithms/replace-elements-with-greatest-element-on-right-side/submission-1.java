@@ -1,0 +1,27 @@
+class Solution {
+    public int[] replaceElements(int[] arr) {
+        int[] res = new int[arr.length];
+        int max=0;
+        for(int i =0;i<arr.length;i++){
+            if(i<arr.length-1){
+                max =arr[i+1];
+            }
+            else{
+                max=arr[i];
+            }
+            
+            for(int j=i+1;j<arr.length;j++){
+                if(arr[j]>max){
+                    max = arr[j];
+                }
+            }
+            if(i==arr.length-1){
+                res[i]=-1;
+            }
+            else{
+                res[i]=max;
+            }
+        }
+        return res;
+    }
+}
